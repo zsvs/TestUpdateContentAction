@@ -1,13 +1,13 @@
-﻿front:
+front:
   default_values:
     name: front-end-deployment
-    tag: 0.0.1
+    tag: 1.0.3
   new_values_1:
     name: front-end-deployment
-    tag: 0.0.1
+    tag: 1.0.3
   new_values_2:
     name: front-end-deployment
-    tag: 0.0.1
+    tag: 1.0.3
   new_values_3:
     name: front-end-deployment
-    tag: 0.0.1
+    tag: 1.0.3
