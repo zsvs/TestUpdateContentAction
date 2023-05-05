@@ -16,7 +16,7 @@ jobs:
         node-version: 16
 
     - name: Print release version
-      run: "echo Release: ${{ env.GITHUB_REF }}"
+      run: echo ${{ env.GITHUB_REF }}
 
     - name: Get Branch with octo
       uses: zsvs/UpdateFileContent@unit-tests
