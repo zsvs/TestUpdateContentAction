@@ -16,7 +16,7 @@ jobs:
         node-version: 16
 
     - name: Print release version
-      run: echo ${{ env.GITHUB_REF }}
+      run: echo ${{ github.event.release.tag_name }}
 
     - name: Get Branch with octo
       uses: zsvs/UpdateFileContent@unit-tests
@@ -24,7 +24,7 @@ jobs:
         repo: "TestUpdateContentAction"
         owner: "zsvs"
         file: "test-data.yaml"
-        new_value: ${{ env.GITHUB_REF }}
+        new_value: ${{ github.event.release.tag_name }}
         target_branch: "test"
         parent_key: "front"
         child_key: "tag"
