@@ -1,0 +1,29 @@
+﻿name: 'Update file content'
+
+on:
+  release:
+
+jobs:
+
+  TestOctokit:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/setup-node@v2
+      name: Node installation
+      with:
+        node-version: 16
+
+    - name: Get Branch with octo
+      uses: zsvs/UpdateFileContent@unit-tests
+      with:
+        repo: "TestUpdateContentAction"
+        owner: "zsvs"
+        file: "test-data.yaml"
+        new_value: ${{ env.GITHUB_REF }}
+        target_branch: "test"
+        parent_key: "front"
+        child_key: "tag"
+        pr_title: "Update tag value on release"
+        pr_message: "This tag value has been updated by GH action in time of release!"
+        github_tkn: ${{ secrets.GITHUB_TOKEN }}
